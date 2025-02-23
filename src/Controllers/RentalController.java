@@ -6,13 +6,13 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 public class RentalController {
     //Variables para llevar control de los dias en salio y entro el vehiculo
-    public LocalDate exitDate;
-    public LocalDate estimateReturnDate;
-    public LocalDate returnDate;
+    private LocalDate exitDate;
+    private LocalDate estimateReturnDate;
+    private LocalDate returnDate;
     
     //Variable para llevar el tiempo total que se presto el vehiculo
-    public int totalDays;
-    public int extraDays;
+    private int totalDays;
+    private int extraDays;
 
     public void calculateTotalDays() {
         this.totalDays = Math.toIntExact(Duration.between(this.exitDate.atStartOfDay(), this.estimateReturnDate.atStartOfDay()).toDays());
